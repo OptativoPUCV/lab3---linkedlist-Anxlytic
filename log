@@ -132,3 +132,36 @@ list.c:38:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 2eb35f7
+Sun 31 Mar 2024 01:40:48 AM UTC: 
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:32:3: error: conversion to non-scalar type requested
+   32 |   List L = (List) malloc(sizeof(List));
+      |   ^~~~
+In file included from list.c:3,
+                 from test.c:5:
+list.c:33:12: error: invalid operands to binary != (have ‘List’ {aka ‘struct List’} and ‘void *’)
+   33 |   assert(L != NULL);
+      |            ^~
+list.c:33:12: error: invalid operands to binary != (have ‘List’ {aka ‘struct List’} and ‘void *’)
+   33 |   assert(L != NULL);
+      |            ^~
+In file included from test.c:5:
+list.c:34:4: error: invalid type argument of ‘->’ (have ‘List’ {aka ‘struct List’})
+   34 |   L->head = NULL;
+      |    ^~
+list.c:35:4: error: invalid type argument of ‘->’ (have ‘List’ {aka ‘struct List’})
+   35 |   L->tail = NULL;
+      |    ^~
+list.c:36:4: error: invalid type argument of ‘->’ (have ‘List’ {aka ‘struct List’})
+   36 |   L->current = NULL;
+      |    ^~
+list.c:37:10: error: incompatible types when returning type ‘List’ {aka ‘struct List’} but ‘List *’ {aka ‘struct List *’} was expected
+   37 |   return L;
+      |          ^
+list.c:38:1: error: control reaches end of non-void function [-Werror=return-type]
+   38 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+6c43ab5
