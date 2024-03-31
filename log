@@ -191,3 +191,11 @@ list.c:32:3: error: conversion to non-scalar type requested
       |   ^~~~
 Compilation failed
 533ca9d
+Sun 31 Mar 2024 01:41:39 AM UTC: 
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:32:3: error: conversion to non-scalar type requested
+   32 |   List * L = (List) malloc(sizeof(List));
+      |   ^~~~
+Compilation failed
+7fe5479
